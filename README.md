@@ -9,12 +9,17 @@ Theory is to read the Analog data on A0, and map it from 0 - 100 seconds in incr
 
 When the knob stops turning, the reading is taken and then starts counting backwards.
 
+e.g: If the knob stops at 10 seconds - the counter starts counting backwards 10,9,8,....0...
+
 Can be customized in code for 5 seconds, or 15 minutes or a few minute increments. 
 
 The parts needed are 
-Arduino Uno,
-4.7k Potentiometer
-TM1637 display ( has 4 pins,  Vcc, GND, DIO and CLK )
+
+	Arduino Uno,
+
+	4.7k Potentiometer
+
+	TM1637 7 segment LED display ( has 4 pins,  Vcc, GND, DIO and CLK )
 
 Connections :
 
@@ -35,6 +40,8 @@ The heart of the code is getting the formula from the mapped outputvalue:
 Basis of the code is File-> Examples -> Analog-> AnalogInOutSerial which was later modified.
 
 The "counter" global variable keeps track of the seconds that the potentiometer was stopped and starts counting backwards.
+
+Other support programs used when developing were "File->Examples-> TM1637 -> TM1637Test"
 
 
 		  sensorValue = analogRead(analogInPin);
